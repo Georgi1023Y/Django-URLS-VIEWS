@@ -1,8 +1,7 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path("", views.index),
-    path("<int:month>", views.monthly_challenge_by_number),
-    path("<str:month>", views.all_months, name="monthly-challenges")
+    path('admin/', admin.site.urls),
+    path("challenges_app", include("challenges_app.urls"))
 ]
